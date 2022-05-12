@@ -189,6 +189,7 @@ service:
       processors:
         - memory_limiter
         - batch
+        - filter
         - resource/add_cluster_name
         {{- if .Values.extraAttributes.custom }}
         - resource/add_custom_attrs

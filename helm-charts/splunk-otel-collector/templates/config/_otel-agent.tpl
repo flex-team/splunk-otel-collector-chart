@@ -494,6 +494,7 @@ processors:
   {{- include "splunk-otel-collector.otelMemoryLimiterConfig" . | nindent 2 }}
 
   batch:
+  filter:
 
   # Resource detection processor is configured to override all host and cloud
   # attributes because OTel Collector Agent is the source of truth for all host
