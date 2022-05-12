@@ -495,6 +495,15 @@ processors:
 
   batch:
   filter:
+    metrics:
+      exclude:
+        match_type: regexp
+        metric_names:
+          # network metrics can be ignorable for splunk collector
+          - istio.*
+          - envoy.*
+          # spring boot server request metrics could be replaced by APM metrics
+          - http_server_requests.*
 
   # Resource detection processor is configured to override all host and cloud
   # attributes because OTel Collector Agent is the source of truth for all host
